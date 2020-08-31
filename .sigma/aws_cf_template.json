@@ -12,10 +12,6 @@
     }
   },
   "Outputs": {
-    "cognitoMM": {
-      "Description": "ID of Cognito user pool MM",
-      "Value": "us-east-1_TBKX7CEsM"
-    },
     "ktestenvsync": {
       "Description": "ARN of Lambda function ktestenvsync",
       "Value": {
@@ -94,9 +90,9 @@
                 {
                   "Effect": "Allow",
                   "Action": [
-                    "cognito-idp:ListUsers"
+                    "dynamodb:Scan"
                   ],
-                  "Resource": "arn:aws:cognito-idp:us-east-1:318300609668:userpool/us-east-1_TBKX7CEsM"
+                  "Resource": "arn:aws:dynamodb:us-east-1:318300609668:table/BTMenu"
                 }
               ]
             }

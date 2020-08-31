@@ -1,17 +1,16 @@
 const AWS = require('aws-sdk');
-const cognito_idp = new AWS.CognitoIdentityServiceProvider();
+const ddb = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = async (event) => {
     try {
-        let data = await cognito_idp.listUsers({
-            UserPoolId: "us-east-1_TBKX7CEsM",
-            Limit: 10
+        let data = await ddb.scan({
+            TableName: "BTMenu"
         }).promise();
-        console.log(data);
-
+console.log(data);
     } catch (err) {
         // error handling goes here
     };
+
 
     return { "message": "Successfully executed" };
 };
