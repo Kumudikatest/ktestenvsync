@@ -4,7 +4,7 @@ const ddb = new AWS.DynamoDB.DocumentClient();
 exports.handler = async (event) => {
     try {
         let data = await ddb.scan({
-            TableName: "BTMenu"
+            TableName: "hirutestddb"
         }).promise();
 console.log(data);
     } catch (err) {
